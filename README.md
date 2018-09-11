@@ -47,6 +47,7 @@
      }).then((text) => {
         console.log(text);
      })
+     参考： https://www.jianshu.com/p/ed9e98731d96
 # $axios请求      推荐  
         
     npm i axios --save-dev
@@ -64,7 +65,7 @@
     }).then((text) => {
         console.log(text.data);
     })
-
+    参考： https://www.kancloud.cn/yunye/axios/234845
 
 # vue常用的库
 ## 1. ElemeFE/element
