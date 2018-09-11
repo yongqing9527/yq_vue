@@ -31,6 +31,41 @@
         favicon: './favicon.ico'   //加入这一行
       }),
 * <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
+# $http请求
+
+    npm install vue-resource --save-dev
+    //main.js引入
+    import VueResource from 'vue-resource'
+    Vue.use(VueResource)
+    
+    this.$http({
+        url: '',
+        method: 'post',
+        body: {
+          'ProcessCode': 'MD'
+        }
+     }).then((text) => {
+        console.log(text);
+     })
+# $axios请求      推荐  
+        
+    npm i axios --save-dev
+    // main.js 引入
+    import axios from 'axios'
+    Vue.prototype.$axios = axios
+    
+    this.$axios({
+        url: '',
+        method: 'post',
+        data: {
+          'ProcessCode': 'MD'
+        },
+        responseType: 'json',
+    }).then((text) => {
+        console.log(text.data);
+    })
+
+
 # vue常用的库
 ## 1. ElemeFE/element
     
