@@ -1,4 +1,12 @@
 # yq_vue
+## 预处理
+
+    npm install sass-loader node-sass --save-dev
+    // 页面引用
+    <style lang="scss">
+      @import './login.scss';
+    </style>
+
 ## vue-cli 中如何插入jquery
 1.安装jquery包
 
@@ -66,6 +74,21 @@
         console.log(text.data);
     })
     参考： https://www.kancloud.cn/yunye/axios/234845
+# vue-cli 引入组件
+* 新建一个.vue 文件写入内容
+* 在要引入的页面中写入
+
+      <baHeader></baHeader>
+      import baHeader from '../public/header'
+      components: {
+        baMaHeader
+      },
+* 组件传值
+       
+      // 父组件 应用
+      <baMaFooter :flag1 = 'flags'></baMaFooter>
+      //子组件 在components后面写，和data平级
+      props: ['flag1', 'flag2', 'flag3', 'flag4']
 
 # vue常用的库
 ## 1. ElemeFE/element
