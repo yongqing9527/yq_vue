@@ -89,7 +89,24 @@
       <baMaFooter :flag1 = 'flags'></baMaFooter>
       //子组件 在components后面写，和data平级
       props: ['flag1', 'flag2', 'flag3', 'flag4']
+如何在子组件中改变父组件的值
 
+    // 父组件 应用
+     <baMaSearch :actives = "searchFlag" v-on:noSearch="back($event)"/>
+       methods: {
+        back: function (sflag) {
+          this.searchFlag = sflag   // 接收这个参数，改变父组件data的值
+        }
+       }
+    //子组件
+     <input type="button" value="取消" @click="back">
+       methods: {
+        back: function () {
+          this.$emit('noSearch', false)  // 派出$emit 自定义事件 让父组件接受一个参数
+        }
+       }
+# vue引入常用插件 
+    
 # vue常用的库
 ## 1. ElemeFE/element
     
