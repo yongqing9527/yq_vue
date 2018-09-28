@@ -1,11 +1,20 @@
 # yq_vue
+## vue-cli  2.0 版本
+      npm install vue-cli -g
+      vue init webpack my-project
+      
 ## 预处理
 
-    npm install sass-loader node-sass --save-dev
+    npm install sass-loader node-sass style-loader --save-dev
     // 页面引用
     <style lang="scss">
       @import './login.scss';
     </style>
+    //webpack配置
+    {
+      test: /\.scss$/,
+      loaders: ["style", "css", "sass"]
+    }
 
 ## vue-cli 中如何插入jquery
 1.安装jquery包
@@ -39,6 +48,38 @@
         favicon: './favicon.ico'   //加入这一行
       }),
 * <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico"/>
+# mescroll.js 下拉上拉
+      npm install --save mescroll.js 
+      // main.js引入
+      import 'mescroll.js/mescroll.min.css'
+      // .vue 页面
+      <!--mescroll滚动区域的基本结构-->
+      <mescroll-vue ref="mescroll" :down="mescrollDown" :up="mescrollUp" @init="mescrollInit">
+         <!--内容...-->
+      </mescroll-vue>
+      import MescrollVue from 'mescroll.js/mescroll.vue'
+      link：https://github.com/mescroll/mescroll
+# swiper 轮播图
+      npm install vue-awesome-swiper --save
+      // main.js 引入
+      import VueAwesomeSwiper from 'vue-awesome-swiper'
+      Vue.use(VueAwesomeSwiper)
+      // .vue 文件
+      <!-- slides -->
+        <swiper-slide>I'm Slide 1</swiper-slide>
+        <!-- Optional controls -->
+        <div class="swiper-pagination"  slot="pagination"></div>//
+        <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
+        <div class="swiper-scrollbar"   slot="scrollbar"></div>
+      </swiper>
+      // 引用
+      import { swiper, swiperSlide } from 'vue-awesome-swiper'
+      components: { swiper, swiperSlide }
+      <swiper :options="swiperOption" ref="mySwiper">
+      //配置
+      swiperOption: {}
+      文档：https://www.swiper.com.cn/api/autoplay/295.html
 # $http请求
 
     npm install vue-resource --save-dev
@@ -105,8 +146,36 @@
           this.$emit('noSearch', false)  // 派出$emit 自定义事件 让父组件接受一个参数
         }
        }
+# vue打包 注意
+* config >> index.js
+
+      assetsRoot: path.resolve(__dirname, '../dist'),
+      assetsSubDirectory: 'static',
+      assetsPublicPath: './',
+* build >>  utils.js
+
+      if (options.extract) {
+        return ExtractTextPlugin.extract({
+          use: loaders,
+          publicPath: '../../',
+          fallback: 'vue-style-loader'
+        })
+      } else {
+        return ['vue-style-loader'].concat(loaders)
+      }
+* 开启 mode: 'history' 以后，打包也会空白
+
+      Apache安装：https://jingyan.baidu.com/article/d8072ac47baf0eec95cefdca.html
+      nginx
+      // 还没有解决这个问题
 # vue引入常用插件 
-    
+## echarts 
+      npm install echarts -S
+      // main.js
+      import echarts from 'echarts'
+      Vue.prototype.$echarts = echarts 
+      参考： https://blog.csdn.net/mr_wuch/article/details/70225364
+
 # vue常用的库
 ## 1. ElemeFE/element
     
