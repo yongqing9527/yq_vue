@@ -2,6 +2,9 @@
 ## vue-cli  2.0 版本
       npm install vue-cli -g
       vue init webpack my-project
+## vue-cli  3.0 版本
+      npm install -g @vue/cli
+      vue create hello-world
       
 ## 预处理
 
@@ -167,7 +170,7 @@
 
       Apache安装：https://jingyan.baidu.com/article/d8072ac47baf0eec95cefdca.html
       nginx
-      // 还没有解决这个问题
+      // https://router.vuejs.org/zh/guide/essentials/history-mode.html
 # vue引入常用插件 
 ## echarts 
       npm install echarts -S
