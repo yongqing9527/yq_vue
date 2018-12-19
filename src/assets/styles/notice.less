@@ -1,0 +1,42 @@
+@import "./theme.less";
+.notice-head {
+  position: relative;
+  padding: 10px 15px;
+  color: #555555;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.notice-head .title {
+  margin-left: 15px;
+  margin-right: 80px;
+}
+
+.notice-head i {
+  display: block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: url("../../assets/imgs/notice.png");
+  background-size: 12px 12px;
+}
+
+.notice-head .date {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 12px;
+}
+
+.notice-cont {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #555555;
+}
+
+.vux-tab .vux-tab-item.vux-tab-selected {
+  color: @theme-color;
+  border-color: @theme-color;
+}
